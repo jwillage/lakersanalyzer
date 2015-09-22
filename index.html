@@ -1,1 +1,197 @@
-default
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lakers Analyzer</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Lakers Analyzer">
+  <meta name="author" content="J. Willage">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Lakers Analyzer</h1>
+    <h2></h2>
+    <p>J. Willage<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Problem Background</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The <code>lakers</code> dataset that comes with the lubridate R package contains all the 
+play-by-play information of the Lakers 2008-2009 season.<br></li>
+<li>The Lakers won the NBA Championship this season, so it would be useful to 
+analyze this data to see what makes for an NBA champion.<br></li>
+<li>The data contains 34,624 rows and is not useful in this state for 
+analysis over a season.</li>
+</ul>
+
+<pre><code class="r">head(lakers, 3)
+</code></pre>
+
+<pre><code>##       date opponent game_type  time period     etype team
+## 1 20081028      POR      home 12:00      1 jump ball  OFF
+## 2 20081028      POR      home 11:39      1      shot  LAL
+## 3 20081028      POR      home 11:37      1   rebound  LAL
+##                player result points type  x  y
+## 1                                 0      NA NA
+## 2           Pau Gasol missed      0 hook 23 13
+## 3 Vladimir Radmanovic             0  off NA NA
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Context/Technical Background</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The app uses the dplyr package to get the dataset into a usable format.<br></li>
+<li>The total points are calculated as a sum for each team per date.<br></li>
+</ul>
+
+<pre><code>## Source: local data frame [6 x 3]
+## Groups: date
+## 
+##       date team total
+## 1 20081028  LAL    96
+## 2 20081028  POR    76
+## 3 20081029  LAC    79
+## 4 20081029  LAL   117
+## 5 20081101  DEN    97
+## 6 20081101  LAL   104
+</code></pre>
+
+<ul>
+<li>A ggplot bargraph is output based on the user&#39;s selection of games, which
+showcases the Lakers and their opponents points for that game.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Solution</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The Lakers Analyzer app lets the user explore the Lakers 2008-2009 season on a 
+game by game basis.</li>
+<li>The app allows the user to view the score of each Lakers game, looking for 
+trends as the season progresses.</li>
+</ul>
+
+<p><img src="assets/img/screenshot.png" alt="width"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>With a better understanding of how the Lakers performed over the season, an
+analyst can drill into a particular trend to explore.</li>
+<li>For instance, we can see that the team started off the season with a 13 - 1
+run. Now we can use further analysis techniques to see what the Lakers did in
+those first 14 games and try to replicate that performance.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Problem Background'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Context/Technical Background'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Solution'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusions'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='NA'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
