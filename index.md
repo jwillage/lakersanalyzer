@@ -80,4 +80,4 @@ trends as the season progresses.
 analyst can drill into a particular trend to explore.
 - For instance, we can see that the team started off the season with a 13 - 1
 run. Now we can use further analysis techniques to see what the Lakers did in
-those first 14 games and try to replicate that performance.
+those first 14 games and try to replicate that performance. 
